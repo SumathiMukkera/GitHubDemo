@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "4e2a899a-41af-4e6f-a5ae-85df1cfe33e6",
+		"name": "VariableCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get userdata",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "16bdda4f-eea9-4096-a2e7-33d44b075d20",
+						"exec": [
+							"//local variables\r",
+							"pm.variables.set(\"url_local\", \"https://reqres.in\");\r",
+							"\r",
+							"//Global variable\r",
+							"pm.globals.set(\"userid_global\", \"09\");\r",
+							"\r",
+							"//Environment variable\r",
+							"pm.environment.set(\"user_name\",\"sumaraki\");\r",
+							"\r",
+							"//collection variable\r",
+							"pm.collectionVariables.set(\"userid_collect\",\"2\");\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef4bd90e-1b02-4045-9ee5-bdd127bff18b",
+						"exec": [
+							"//remove global varibale after used in request\r",
+							"//pm.globals.unset(\"userid_global\", \"09\");\r",
+							"\r",
+							"//Environment variable\r",
+							"//pm.environment.unset(\"user_name\",\"sumaraki\");\r",
+							"\r",
+							"//collection variable\r",
+							"//pm.collectionVariables.unset(\"userid_collect\",\"2\");\r",
+							"\r",
+							"//pm.variables.unset(\"url_local\", \"https://reqres.in\");\r",
+							"\r",
+							"console.log(pm.variables.get(\"url_local\"));\r",
+							"console.log(pm.globals.get(\"userid_global\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "393e4067-6daf-447e-a1fa-cca01000ca51",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/api/users?page={{userid_collect}}",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{userid_collect}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createNew user",
+			"id": "38b251bd-304a-4a7b-bcb9-6e6b492632d1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sumathi Mukkera\",\r\n    \"job\": \"QA analyst\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url_global}}/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "collection_var",
+			"id": "e1a9a8d7-715f-47f2-a1e5-5af7f35d19d2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sumathi Mukkera\",\r\n    \"job\": \"New Sdet1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url_collector}}/api/users/215"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "55c96850-995a-4bd8-b75e-420e41ada62c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"key": "x-api-key",
+						"value": "reqres-free-v1"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"eve.holt@reqres.in\"\r\n   // \"password\": \"pistol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8f29e1e1-f35a-4ec7-a169-d39ad38d2261",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2215e602-a9ec-45be-aa89-4a923c9b8f79",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_collector",
+			"value": "https://reqres.in",
+			"type": "string"
+		},
+		{
+			"key": "userid_collect",
+			"value": ""
+		}
+	]
+}
