@@ -57,7 +57,7 @@
 						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0RGlldEBnbWFpbC5jb20iLCJpYXQiOjE3NTQyNTc2NzQsImV4cCI6MTc1NDI4NjQ3NH0.W80qDhDbIrQlqZMF5tEYiO7_2sfV7ldmJDeI7X6FQTdKds6Ulu4HZhkmQ_9BE3wyGlG9GufpVIS1ED5C0DUQPw"
 					}
 				},
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
