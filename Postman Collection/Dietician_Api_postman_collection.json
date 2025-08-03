@@ -57,14 +57,8 @@
 						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0RGlldEBnbWFpbC5jb20iLCJpYXQiOjE3NTQyNTc2NzQsImV4cCI6MTc1NDI4NjQ3NH0.W80qDhDbIrQlqZMF5tEYiO7_2sfV7ldmJDeI7X6FQTdKds6Ulu4HZhkmQ_9BE3wyGlG9GufpVIS1ED5C0DUQPw"
 					}
 				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/xml",
-						"type": "text"
-					}
-				],
+				"method": "PUT",
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "",
@@ -74,7 +68,7 @@
 						}
 					}
 				},
-				"url": "https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/morbidity/T4"
+				"url": "https://dietician-july-api-hackathon-80f2590665cc.herokuapp.com/dietician/morbidity"
 			},
 			"response": []
 		},
